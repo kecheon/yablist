@@ -1,8 +1,8 @@
 from django.test import RequestFactory
 from .. import views
 
-class TestBidderView:
+class TestBidderListView:
     def test_anonymous(self):
         req = RequestFactory().get('/')
-        res = views.BidderView.as_view()(req)
+        res = views.BidderList.as_view()(req)
         assert res.status_code == 200

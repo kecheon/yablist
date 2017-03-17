@@ -1,1 +1,13 @@
-bidders list template
+{% extends CMS_TEMPLATE %}
+{% load cms_tags sekizai_tags staticfiles thumbnail %}
+
+{% block title %}Staff{% endblock title %}
+
+{% block body_classes %}{{ block.super }} staffmember-list{% endblock %}
+
+{% block app_content %}
+  {% for bidder in bidder %}
+    {{ bidder.number }} {{ bidder.name }}
+  {% endfor %}
+
+{% endblock %}

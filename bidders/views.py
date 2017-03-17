@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.core.urlresolvers import reverse
+from django.views.generic import DetailView, ListView
+from .models import Bidder
 
-class BidderView(TemplateView):
-    template_name = 'list.html'
+
+class BidderList(ListView):
+    model = Bidder

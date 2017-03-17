@@ -6,6 +6,3 @@ class Bidder(models.Model):
     name = models.CharField(max_length=100)
     number = models.BigIntegerField()
     desc = models.TextField()
-
-    def excerpt(self, obj):
-        return obj.name

@@ -11,7 +11,9 @@ pytestmark = pytest.mark.django_db
 
 class TestAdmin:
     def test_list(self):
-        obj = mixer.blend('bidders.Bidder', name='주식회사 이노지투비')
+        obj = mixer.blend('bidders.Bidder', # app.model
+            name='주식회사 이노지투비',
+            desc='업무용 소프트웨어 개발 전문')
         site = AdminSite()
 
         bidder_admin = admin.BidderAdmin(models.Bidder, site)

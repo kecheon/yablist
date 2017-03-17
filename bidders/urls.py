@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.BidderView.as_view(), name='bidders'),
+    url(r'^$', views.BidderList.as_view()),
 ]

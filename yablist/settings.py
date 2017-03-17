@@ -34,20 +34,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 
-
-
-
 ROOT_URLCONF = 'yablist.urls'
-
-
 
 WSGI_APPLICATION = 'yablist.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-
 
 
 # Internationalization
@@ -149,6 +141,7 @@ INSTALLED_APPS = (
     'djangocms_googlemap',
     'djangocms_video',
     'yablist',
+    'bidders_cms_integration',
     'bidders',
 )
 

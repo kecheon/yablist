@@ -7,7 +7,6 @@ class BidderAdmin(admin.ModelAdmin):
     list_display = ('excerpt', )
 
     def excerpt(self, obj):
-        return obj.excerpt(obj)
-
+        return obj.name
 
 admin.site.register(models.Bidder, BidderAdmin)
