@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.BidderList.as_view()),
+    url(r'^$', views.CategoryListView.as_view()),
+    # url(r'^/categories', views.Categories.as_view()),
 ]

@@ -110,7 +110,9 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 INSTALLED_APPS = (
@@ -123,6 +125,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    'django.contrib.flatpages',
     'cms',
     'menus',
     'sekizai',
@@ -140,9 +143,13 @@ INSTALLED_APPS = (
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
+    'haystack',
     'yablist',
     'bidders_cms_integration',
     'bidders',
+    'categories',
+    'categories.editor',
+    'debug_toolbar',
 )
 
 LANGUAGES = (
@@ -201,3 +208,12 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr'
+        # ...or for multicore...
+        # 'URL': 'http://127.0.0.1:8983/solr/mysite',
+    },
+}
