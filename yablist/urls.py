@@ -21,6 +21,8 @@ urlpatterns += i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^search/', include('haystack.urls')),
     url(r'^categories/', include('categories.urls')),
+    # following app is integrated into cms
+    url(r'^bidders/', include('bidders.urls', app_name='bidders', namespace='bidders')),
     url(r'^', include('cms.urls')),
 )
 
