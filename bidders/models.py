@@ -15,3 +15,4 @@ class Bidder(models.Model):
     desc = models.TextField()
     address = models.CharField(max_length=200, null=True)
     category = models.ForeignKey('categories.Category')
+    tags = models.ForeignKey('simpletext.SimpleCategory', null=True)

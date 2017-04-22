@@ -148,6 +148,8 @@ INSTALLED_APPS = (
     'bidders_cms_integration',
     'bidders',
     'categories',
+    'mptt',
+    'simpletext',
     'categories.editor',
     'debug_toolbar',
 )
